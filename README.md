@@ -29,7 +29,53 @@ sha256sum conda-installer.sh
 ```
 bash conda-installer.sh
 ```
+4. create conda environment
+```
+conda create
+```
+## Setup application
+1. git clone
 
+2. install requirements
+```
+pip install -r requirements.txt
+```
+3. run the application
+
+## Setup ngix
+1. Install NGIX
+```
+sudo apt install nginx
+```
+2. create new configuration file
+```
+sudo nano /etc/nginx/sites-enabled/flask_app
+```
+3. configure configuration file
+```
+server {
+    listen 80;
+    server_name 192.0.2.0;
+
+    location / {
+        proxy_pass http://127.0.0.1:8000;
+        proxy_set_header Host $host;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+    }
+}
+```
+4. disable default link
+```
+sudo unlink /etc/nginx/sites-enabled/default
+```
+5. reload 
+```
+Reload the NGINX configuration file:
+```
+Reference
+[Reference 1](https://www.linode.com/docs/guides/flask-and-gunicorn-on-ubuntu/)
+
+# Development
 ## Flask Installation
   - Install [Python](https://www.python.org/downloads/), [Pipenv](https://docs.pipenv.org/) and [Postgres](https://www.postgresql.org/) on your machine
   - Clone the repository `$ git clone git@github.com:jerichoruz/backbloggie.git`
