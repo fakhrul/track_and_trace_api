@@ -32,7 +32,6 @@ Flask-Migrate==2.7.0
 Flask-Script==2.0.6
 Flask-Seeder==1.2.0
 Flask-SQLAlchemy==2.4.4
-freeze==3.0
 hexbytes==0.2.1
 idna==2.10
 ipfshttpclient==0.7.0a1
@@ -50,19 +49,16 @@ paypalrestsdk==1.13.1
 Pillow==8.1.2
 pipenv==2020.11.15
 protobuf==3.15.3
-psycopg2==2.8.6
 psycopg2-binary==2.8.6
 pycodestyle==2.6.0
 pycparser==2.20
 pycryptodome==3.10.1
 PyJWT==1.7.1
 pyOpenSSL==20.0.1
-pypiwin32==223
 pyrsistent==0.17.3
 python-dateutil==2.8.1
 python-dotenv==0.15.0
 python-editor==1.0.4
-pywin32==300
 qrcode==6.1
 requests==2.25.1
 rlp==2.0.1
