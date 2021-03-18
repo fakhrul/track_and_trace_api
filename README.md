@@ -13,6 +13,23 @@ npm install
 python run.py
 ````
 
+# Fresh deployment via SSH
+## Setup conda
+1. Download the Anaconda bash script
+```
+mkdir tmp
+cd /tmp
+curl https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh --output conda-installer.sh
+```
+2. Verify installer
+```
+sha256sum conda-installer.sh
+```
+3. Run the installer script and complete installation
+```
+bash conda-installer.sh
+```
+
 ## Flask Installation
   - Install [Python](https://www.python.org/downloads/), [Pipenv](https://docs.pipenv.org/) and [Postgres](https://www.postgresql.org/) on your machine
   - Clone the repository `$ git clone git@github.com:jerichoruz/backbloggie.git`
