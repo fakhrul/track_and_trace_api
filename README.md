@@ -75,6 +75,23 @@ Reload the NGINX configuration file:
 Reference
 [Reference 1](https://www.linode.com/docs/guides/flask-and-gunicorn-on-ubuntu/)
 
+## To run the app using nohup
+1. create new shell script, save as start.sh
+```
+#!/bin/bash
+source /root/miniconda3/etc/profile.d/conda.sh
+conda activate tat
+python /path/run.py
+```
+2. update the file 
+```
+chmod +x start.sh
+```
+3. call the nohup
+```
+nohup ./start.sh &
+```
+
 # Development
 ## Flask Installation
   - Install [Python](https://www.python.org/downloads/), [Pipenv](https://docs.pipenv.org/) and [Postgres](https://www.postgresql.org/) on your machine
