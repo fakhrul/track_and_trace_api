@@ -68,9 +68,9 @@ server {
 ```
 sudo unlink /etc/nginx/sites-enabled/default
 ```
-5. reload 
+5. Reload the NGINX configuration file:
 ```
-Reload the NGINX configuration file:
+sudo nginx -s reload
 ```
 Reference
 [Reference 1](https://www.linode.com/docs/guides/flask-and-gunicorn-on-ubuntu/)
