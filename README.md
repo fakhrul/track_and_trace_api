@@ -92,6 +92,22 @@ chmod +x start.sh
 nohup ./start.sh &
 ```
 
+## Install database
+1. Install database
+````
+sudo apt-get install postgresql
+````
+2. To connect to PostgreSQL using the postgres role, you switch over to the postgres account on your server by typing:
+````
+sudo -i -u postgres
+psql
+postgres=#
+
+to quit
+postgres=# \q
+postgres@ubuntu-dev:~$ exit
+````
+
 # Development
 ## Flask Installation
   - Install [Python](https://www.python.org/downloads/), [Pipenv](https://docs.pipenv.org/) and [Postgres](https://www.postgresql.org/) on your machine
