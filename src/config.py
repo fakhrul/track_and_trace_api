@@ -17,8 +17,10 @@ class Development(object):
     MAIL_PORT = os.getenv('MAIL_PORT')
     MAIL_USERNAME = os.getenv('MAIL_USERNAME')
     MAIL_PASSWORD = os.getenv('MAIL_PASSWORD')
-    MAIL_USE_TLS = False
-    MAIL_USE_SSL = True
+    # MAIL_USE_TLS = False
+    # MAIL_USE_SSL = False
+    # MAIL_USE_TLS = os.getenv('MAIL_USE_TLS')
+    # MAIL_USE_SSL = os.getenv('MAIL_USE_SSL')
     ETHEREUM_ENDPOINT_URI = os.getenv('ETHEREUM_ENDPOINT_URI')
 
 class Production(object):
@@ -33,8 +35,8 @@ class Production(object):
     MAIL_PORT = os.getenv('MAIL_PORT')
     MAIL_USERNAME = os.getenv('MAIL_USERNAME')
     MAIL_PASSWORD = os.getenv('MAIL_PASSWORD')
-    MAIL_USE_TLS = False
-    MAIL_USE_SSL = True
+    # MAIL_USE_TLS = False
+    # MAIL_USE_SSL = False
     ETHEREUM_ENDPOINT_URI = os.getenv('ETHEREUM_ENDPOINT_URI')
 
 app_config = {

@@ -10,9 +10,15 @@ app = Flask(__name__)
 etheruem_api = Blueprint('etheruem_api', __name__)
 
 
-@etheruem_api.route('/', methods=['GET'])
+@etheruem_api.route('/email', methods=['GET'])
 def index():
+    Ethereum.email_test();
+    return custom_response('done', 200)
+
+@etheruem_api.route('/', methods=['GET'])
+def email():
     return custom_response('etheruem', 200)
+
 
 @etheruem_api.route('/signin', methods=['POST'])
 def signin():

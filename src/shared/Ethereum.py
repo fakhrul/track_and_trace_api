@@ -5,6 +5,7 @@ from web3.middleware import geth_poa_middleware
 from .Encryptor import Encryptor
 from datetime import datetime
 from .QrGenerator import QrGenerator
+from .Mailing import Mailing
 
 geth_url = os.getenv('ETHEREUM_ENDPOINT_URI')
 contract_path = os.getenv('ETHEREUM_CONTRACT_PATH')
@@ -27,6 +28,16 @@ for filename in os.listdir(contract_path):
 
 
 class Ethereum():
+    @staticmethod
+    def email_test():
+        web3 = Web3(Web3.HTTPProvider(geth_url))
+        recipients = ['fakhrul@safa.com.my']
+        subject = 'TAT NOTIFICATION - TEST'
+        body = 'Hi, this is notification test'
+        html = '<h1>Hi, this is notification test</h1>'
+
+        Mailing.send_mail(recipients, subject, body, html)
+
     @staticmethod
     def create_organization_type(name, custom):
         web3 = Web3(Web3.HTTPProvider(geth_url))
@@ -1023,6 +1034,15 @@ class Ethereum():
         receipt = web3.eth.waitForTransactionReceipt(tx_hash)
         logs = contract.events.Created().processReceipt(receipt)
         objId = Web3.toHex(logs[0]['args']['objId'])
+
+        # recipients = ['fakhrul@safa.com.my']
+        # subject = 'TAT NOTIFICATION - TEST'
+        # body = 'Hi, this is notification test'
+        # html = '<h1>Hi, this is notification test</h1>'
+
+        Mailing.send_mail(recipients, subject, body, html)
+
+
         return objId
 
     # @staticmethod
